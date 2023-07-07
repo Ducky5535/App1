@@ -21,8 +21,7 @@ So to have this program work for you just have to copy and pasted it in your ide
 
 CREDITS
 My teachers from id camp
-
+  Anjali Tangirala
   and a few more I dont know then name
-  
 https://github.com/Futruo/jetsonai
 https://www.twilio.com/en-us
