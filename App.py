@@ -1,12 +1,12 @@
 import jetson.inference
 import jetson.utils
-from twilio.rest import client
+from twilio.rest import Client
 import time
 
 # Defining veriables
 receiving_number = input("where would you send to? ")
 subj='Person detected!'
-date='7/6/23'
+date='7/7/23'
 message_text='Alert! there has been someone snooping around, you should check on this...'
 print("message setup complete!\nstarting detectmodel...")
 
@@ -28,18 +28,17 @@ while display.IsStreaming():
         print(f"Detected '{class_name}'")
         if (class_name == "person"):
             print("Person detected!")
-            try:
-                account_sid = 'ACc0d1ff6103e8328835a0dcb1cd7a3fbc'
-                auth_token = '0907f6474bc1107becd2dc62f55c7ee8'
-                client = client(account_sid, auth_token)
+            try: #this is to send the message
+                account_sid = 'ACc0d1ff6103e8328835a0dcb1cd7a3fbc' 
+                auth_token = '[AuthToken]' #Go to twilio and get your auth_token
+                client = Client(account_sid, auth_token)
                 message = client.messages.create(
                 from_='+18446070094',
                 body= message_text,
-                to='+' + receiving_number
+                to= '+1' + receiving_number
                 )
                 print(message.sid)
-                time(300)
+                time.sleep(300)
             except:
                 print("Sorry, somthing went wrong...") #fallback message
 			
- 
