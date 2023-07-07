@@ -40,5 +40,5 @@ while display.IsStreaming():
                 print(message.sid)
                 time.sleep(300)
             except:
-                print("Sorry, somthing went wrong...") #fallback message
+                print("Sorry something broke") #fallback message
 			
